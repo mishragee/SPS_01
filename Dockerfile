@@ -1,5 +1,5 @@
-# Use JDK 17 (Matching your project)
-FROM eclipse-temurin:17-jre-alpine
+# Use )
+FROM FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
