@@ -1,10 +1,11 @@
-FROM FROM eclipse-temurin:17-jdk
+# Use the standard JDK 17 image (more compatible than Alpine)
+FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-# Using the wildcard * ensures it finds your sps01 jar 
-# even if the version number changes.
-COPY target/sps01-*.jar app.jar
+# The JAR_FILE argument helps find your sps01 jar specifically
+ARG JAR_FILE=target/sps01-*.jar
+COPY ${JAR_FILE} app.jar
 
 EXPOSE 8080
 
